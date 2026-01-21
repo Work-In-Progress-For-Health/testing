@@ -9,6 +9,18 @@ Person(emma, "Emma", "Emma is INSE tester")
 Container(inse, "INSE", "INSE valiadations for FHIR to HL7 conversions", "Basic Description")
 Rel(emma, inse, "validate format mismatch", "FHIR to HL7 conversions")
 
-Rel(wlims,emma, "Data flow from WLIMS to INSE")
+Rel(wlims, emma, "Data flow from WLIMS to INSE")
+
+Person(shahbaz, "Shahbaz", "Shahbaz is Integration tester")
+Container(integration, "Integration", "Integration validates HL7 message formatting", "Basic Description")
+Rel(shahbaz, integration, "validate HL7 format", "HL7 validations")
+
+Rel(inse, shahbaz, "Data flow from INSE to Integration")
+
+Person(deepesh, "Deepesh", "Deepesh is NHS apps tester")
+Container(nhswales, "NHSWales", "NHS wales app receives the content from HL7 perfectly", "Basic Description")
+Rel(deepesh, nhswales, "NHS app validations", "app validations")
+
+Rel(integration, deepesh, "Integration to mobile app")
 
 @enduml
