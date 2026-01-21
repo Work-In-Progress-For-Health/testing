@@ -1,0 +1,14 @@
+@startuml
+!include <C4/C4_Container>
+Person(katie, "Katie", "Katie is our tester")
+Container(wlims, "WLIMS", "Welsh Laboratory Information Management System (WLIMS)", "Our Description")
+Rel(katie, wlims, "Create patient", "Use settings based on pathway")
+
+
+Person(emma, "Emma", "Emma is INSE tester")
+Container(inse, "INSE", "INSE valiadations for FHIR to HL7 conversions", "Basic Description")
+Rel(emma, inse, "validate format mismatch", "FHIR to HL7 conversions")
+
+Rel(wlims,emma, "Data flow from WLIMS to INSE")
+
+@enduml
